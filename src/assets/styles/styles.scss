@@ -3,12 +3,13 @@
 @import 'reset';
 
 * {
-  font-size: $font-size-regular;
-  line-height: $line-height-regular;
+  font-size: $font-size-default;
+  line-height: $line-height-default;
   font-family: $font-family;
-  font-weight: $font-weight;
+  font-weight: $font-weight-default;
 }
 
 .app-main {
   background-color: $neutral;
+  color: $light-100;
 }
