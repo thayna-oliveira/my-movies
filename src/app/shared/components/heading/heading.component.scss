@@ -1,0 +1,24 @@
+@import 'colors';
+@import 'spacing';
+@import 'typography';
+
+.app-heading {
+  color: $color-light;
+  font-weight: $font-weight-bold;
+  margin: $spacing-default 0;
+
+  &--h1 {
+    font-size: $font-size-big;
+    line-height: $line-height-big;
+  }
+
+  &--h2 {
+    font-size: $font-size-big;
+    line-height: $line-height-big;
+  }
+
+  &--h3 {
+    font-size: $font-size-default;
+    line-height: $line-height-default;
+  }
+}

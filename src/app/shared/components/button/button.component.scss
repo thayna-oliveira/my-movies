@@ -1,11 +1,11 @@
 @import 'colors';
 
 .app-button {
-  background-color: $primary;
+  background-color: $color-primary;
   transition: all 0.2s linear 0s;
   word-spacing: initial;
   border: none;
-  color: $light;
+  color: $color-light;
   padding: 12px 16px;
   text-align: center;
   border-radius: 4px;
@@ -14,6 +14,6 @@
   cursor: pointer;
 
   &:hover {
-    background-color: darken($primary, 15%);
+    background-color: darken($color-primary, 15%);
   }
 }

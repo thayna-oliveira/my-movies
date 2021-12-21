@@ -1,5 +1,6 @@
 @import 'colors';
 @import 'typography';
+@import 'grid';
 @import 'reset';
 
 * {
@@ -10,6 +11,6 @@
 }
 
 .app-main {
-  background-color: $neutral;
-  color: $light-100;
+  background-color: $color-neutral;
+  color: $color-light-100;
 }

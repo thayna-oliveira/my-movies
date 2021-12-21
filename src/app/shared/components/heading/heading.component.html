@@ -1,0 +1,9 @@
+ <div class="app-heading"
+   [ngSwitch]="level">
+   <h1 *ngSwitchCase="1"
+     class="app-heading app-heading--h1">{{title}}</h1>
+   <h3 *ngSwitchCase="3"
+     class="app-heading app-heading--h3">{{title}}</h3>
+   <h2 *ngSwitchDefault
+     class="app-heading app-heading--h2">{{title}}</h2>
+ </div>
