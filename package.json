@@ -7,8 +7,7 @@
     "build": "ng build --build-optimizer=true --aot=true --vendor-chunk=true --configuration=production",
     "test": "jest",
     "test:watch": "jest --watch",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
@@ -37,7 +36,7 @@
     "eslint-plugin-import": "2.22.1",
     "jest": "25.0.0",
     "jest-preset-angular": "8.1.2",
-    "pre-push": "^0.1.1",
+    "git-pre-push": "0.0.5",
     "protractor": "5.4.3",
     "ts-node": "8.7.0",
     "tslint": "5.18.0",
