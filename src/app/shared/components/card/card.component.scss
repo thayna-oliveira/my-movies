@@ -30,6 +30,12 @@
     top: 16px;
     right: 16px;
     border-radius: 8px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__average {
+    margin-left: 4px;
   }
 
   &__overview {

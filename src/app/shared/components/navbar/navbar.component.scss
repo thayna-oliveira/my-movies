@@ -6,4 +6,26 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  &__navigation {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__menu {
+    display: flex;
+
+    & > li:not(:first-child) {
+      margin-left: 32px;
+    }
+  }
+
+  &__link {
+    color: $color-light;
+  }
+
+  &__buttons {
+    margin-left: 20px;
+  }
 }
