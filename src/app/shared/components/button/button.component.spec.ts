@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { SharedModule } from '@shared/shared.module';
 import { ButtonComponent } from './button.component';
 
 describe('ButtonComponent', () => {
@@ -8,9 +8,8 @@ describe('ButtonComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ButtonComponent ]
-    })
-    .compileComponents();
+      imports: [SharedModule],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -20,10 +19,6 @@ describe('ButtonComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-
-  it('given an input label when the component then', () => {
     expect(component).toBeTruthy();
   });
 });

@@ -7,7 +7,9 @@
         [image]="card.poster"
         [releaseDate]="card.date | date:'y'"
         [popularity]="card.average"
-        [genre]="card.genre"></app-card>
+        [genre]="card.genre"
+        [favorite]="card.favorite"
+        (favoriteEvent)="changeFavorite(card)"></app-card>
     </div>
   </div>
 </div>

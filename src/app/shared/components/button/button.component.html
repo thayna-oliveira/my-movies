@@ -1,1 +1,9 @@
-<button class="app-button">{{label}}</button>
+<button class="app-button"
+  [ngClass]="{ 
+  'app-button--primary': type === 'primary',
+  'app-button--secondary': type === 'secondary'}"
+  (click)="clickButton()">
+  <app-icon [iconType]="icon"
+    *ngIf="icon"></app-icon>
+  <span *ngIf="label">{{label}}</span>
+</button>

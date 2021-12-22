@@ -1,19 +1,33 @@
 @import 'colors';
 
 .app-button {
-  background-color: $color-primary;
   transition: all 0.2s linear 0s;
   word-spacing: initial;
   border: none;
   color: $color-light;
-  padding: 12px 16px;
   text-align: center;
-  border-radius: 4px;
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 
-  &:hover {
-    background-color: darken($color-primary, 15%);
+  border-radius: 8px;
+  padding: 12px 16px;
+
+  &--primary {
+    background-color: $color-primary;
+
+    &:hover {
+      background-color: darken($color-primary, 15%);
+    }
+  }
+
+  &--secondary {
+    border: 1px solid darken($color-light-100, 50%);
+
+    &:hover {
+      border: 1px solid $color-primary;
+    }
   }
 }
