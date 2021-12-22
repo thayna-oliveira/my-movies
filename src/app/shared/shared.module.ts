@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrandComponent } from './components/brand/brand.component';
 import { ButtonComponent } from './components/button/button.component';
 import { CardComponent } from './components/card/card.component';
+import { FavButtonComponent } from './components/fav-button/fav-button.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeadingComponent } from './components/heading/heading.component';
 import { IconComponent } from './components/icon/icon.component';
@@ -20,6 +21,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     FooterComponent,
     LoaderComponent,
     IconComponent,
+    FavButtonComponent,
   ],
   exports: [
     ButtonComponent,
@@ -30,6 +32,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     FooterComponent,
     LoaderComponent,
     IconComponent,
+    FavButtonComponent,
   ],
 })
 export class SharedModule {}

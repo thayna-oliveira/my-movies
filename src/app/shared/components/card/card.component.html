@@ -10,12 +10,19 @@
 
   </div>
 
-  <app-heading [title]="title"></app-heading>
+  <div class="app-card__description">
+
+    <app-heading class="app-card__title"
+      [title]="title"></app-heading>
+
+    <div class="app-card__buttons">
+      <app-fav-button (favoriteEvent)="favoriteHandler()"
+        [favorite]="favorite"></app-fav-button>
+    </div>
+  </div>
 
   <div>{{releaseDate}} • {{genre}}</div>
 
   <p class="app-card__overview">{{overview}}</p>
-
-  <app-button label="Favorite"></app-button>
 
 </div>

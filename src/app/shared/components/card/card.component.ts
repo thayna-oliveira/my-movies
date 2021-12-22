@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -12,8 +12,14 @@ export class CardComponent implements OnInit {
   @Input() releaseDate: string;
   @Input() popularity: string;
   @Input() genre: string;
+  @Input() favorite: boolean;
+  @Output() favoriteEvent = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  public favoriteHandler(): void {
+    this.favoriteEvent.emit();
+  }
 }

@@ -1,0 +1,40 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   '/home/thaynac/.nvm/versions/node/v14.15.5/bin/node',
+1 verbose cli   '/home/thaynac/.nvm/versions/node/v14.15.5/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'test',
+1 verbose cli   '--no-cache'
+1 verbose cli ]
+2 info using npm@6.14.11
+3 info using node@v14.15.5
+4 verbose run-script [ 'pretest', 'test', 'posttest' ]
+5 info lifecycle my-movies@0.0.0~pretest: my-movies@0.0.0
+6 info lifecycle my-movies@0.0.0~test: my-movies@0.0.0
+7 verbose lifecycle my-movies@0.0.0~test: unsafe-perm in lifecycle true
+8 verbose lifecycle my-movies@0.0.0~test: PATH: /home/thaynac/.nvm/versions/node/v14.15.5/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/home/thaynac/Área de Trabalho/Estudos/my-movies/node_modules/.bin:/opt/firefox/firefox:/opt/firefox/firefox:/home/thaynac/.nvm/versions/node/v14.15.5/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/thaynac/Downloads/starteam-en-16.0.3-java/bin:/home/thaynac/Downloads/starteam-en-16.0.3-java/bin
+9 verbose lifecycle my-movies@0.0.0~test: CWD: /home/thaynac/Área de Trabalho/Estudos/my-movies
+10 silly lifecycle my-movies@0.0.0~test: Args: [ '-c', 'jest' ]
+11 silly lifecycle my-movies@0.0.0~test: Returned: code: 1  signal: null
+12 info lifecycle my-movies@0.0.0~test: Failed to exec test script
+13 verbose stack Error: my-movies@0.0.0 test: `jest`
+13 verbose stack Exit status 1
+13 verbose stack     at EventEmitter.<anonymous> (/home/thaynac/.nvm/versions/node/v14.15.5/lib/node_modules/npm/node_modules/npm-lifecycle/index.js:332:16)
+13 verbose stack     at EventEmitter.emit (events.js:315:20)
+13 verbose stack     at ChildProcess.<anonymous> (/home/thaynac/.nvm/versions/node/v14.15.5/lib/node_modules/npm/node_modules/npm-lifecycle/lib/spawn.js:55:14)
+13 verbose stack     at ChildProcess.emit (events.js:315:20)
+13 verbose stack     at maybeClose (internal/child_process.js:1048:16)
+13 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:288:5)
+14 verbose pkgid my-movies@0.0.0
+15 verbose cwd /home/thaynac/Área de Trabalho/Estudos/my-movies
+16 verbose Linux 5.4.0-91-generic
+17 verbose argv "/home/thaynac/.nvm/versions/node/v14.15.5/bin/node" "/home/thaynac/.nvm/versions/node/v14.15.5/bin/npm" "run" "test" "--no-cache"
+18 verbose node v14.15.5
+19 verbose npm  v6.14.11
+20 error code ELIFECYCLE
+21 error errno 1
+22 error my-movies@0.0.0 test: `jest`
+22 error Exit status 1
+23 error Failed at the my-movies@0.0.0 test script.
+23 error This is probably not a problem with npm. There is likely additional logging output above.
+24 verbose exit [ 1, true ]

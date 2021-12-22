@@ -1,4 +1,5 @@
 export interface CardModel {
+  id: number;
   name: string;
   genre: string;
   language: string;
@@ -6,4 +7,5 @@ export interface CardModel {
   average: number;
   overview: string;
   date: string;
+  favorite: boolean;
 }

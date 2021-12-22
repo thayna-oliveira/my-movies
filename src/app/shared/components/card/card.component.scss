@@ -25,27 +25,44 @@
     font-size: $font-size-small;
     line-height: $line-height-small;
     background: $color-primary;
-    padding: $spacing-x-small;
+    padding: 4px 8px;
     position: absolute;
     top: 16px;
-    right: 16px;
+    left: 16px;
     border-radius: 8px;
     display: flex;
     align-items: center;
   }
 
   &__average {
-    margin-left: 4px;
+    margin-left: 8px;
+    font-size: 14px;
   }
 
   &__overview {
     margin: $spacing-small 0;
     display: -webkit-box;
+    font-size: $font-size-small;
     height: calc(3 * #{$line-height-default});
     line-height: $line-height-default;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  &__buttons {
+    display: flex;
+  }
+
+  &__description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    flex: 1;
+    margin-right: 8px;
   }
 }
