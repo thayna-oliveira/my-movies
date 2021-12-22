@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-md-4 col-lg-3"
+      *ngFor="let card of cards">
+      <app-card [title]="card.name"
+        [overview]="card.overview"
+        [image]="card.poster"
+        [releaseDate]="card.date | date:'y'"
+        [popularity]="card.average"
+        [genre]="card.genre"></app-card>
+    </div>
+  </div>
+</div>

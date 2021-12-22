@@ -1,10 +1,13 @@
 <div class="app-card">
+
   <div class="app-card__cover"
-    [ngStyle]="{ 'background-image': 'url(https://image.tmdb.org/t/p/original/7vjaCdMw15FEbXyLQTVa04URsPm.jpg)' }">
+    [ngStyle]="{ 'background-image': 'url(https://image.tmdb.org/t/p/original/'+ image +')' }">
 
     <div class="app-card__popularity">
-      {{popularity}}
+      <app-icon iconType="star"></app-icon>
+      <span class="app-card__average">{{popularity | number:'1.1-1' }}</span>
     </div>
+
   </div>
 
   <app-heading [title]="title"></app-heading>

@@ -1,0 +1,9 @@
+.app-brand {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__logo {
+    height: 40px;
+  }
+}

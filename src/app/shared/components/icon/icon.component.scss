@@ -1,0 +1,22 @@
+.app-icon {
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--small {
+      width: 16px;
+      height: 16px;
+    }
+
+    &--medium {
+      width: 24px;
+      height: 24px;
+    }
+
+    &--big {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
