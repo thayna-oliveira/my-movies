@@ -23,6 +23,7 @@
       "@core/*": ["src/app/core/*"],
       "@services/*": ["src/app/core/services/*"],
       "@models/*": ["src/app/core/models/*"],
+      "@mocks/*": ["src/app/core/mock/*"],
       "@components/*": ["src/app/shared/components/*"],
       "@shared/*": ["src/app/shared/*"],
       "@app/*": ["src/app/*"]
