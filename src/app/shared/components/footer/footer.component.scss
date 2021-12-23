@@ -1,9 +1,11 @@
 @import 'colors';
 
 .app-footer {
-  padding: 20px;
   border-top: 1px solid darken($color-light-100, 50%);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  text-align: center;
+  padding: 20px;
+
+  > .link {
+    color: $color-light;
+  }
 }

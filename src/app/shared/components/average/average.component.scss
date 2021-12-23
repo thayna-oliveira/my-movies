@@ -1,0 +1,19 @@
+@import 'typography';
+@import 'spacing';
+@import 'colors';
+
+.app-average {
+  color: $color-light;
+  font-size: $font-size-small;
+  line-height: $line-height-small;
+  background: $color-primary;
+  padding: 4px 8px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+
+  > .average {
+    margin-left: 8px;
+    font-size: 14px;
+  }
+}

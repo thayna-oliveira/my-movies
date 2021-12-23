@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { GenreMap } from '@core/config/genre.map';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CardModel } from '@core/models/card.model';
 import { MovieModel } from '@core/models/movie.model';
 import { SessionService } from '@core/services/session/session.service';
@@ -15,7 +14,7 @@ export class HomePageComponent implements OnInit {
   public cards: CardModel[];
   private favorites: number[];
 
-  constructor(private route: ActivatedRoute, private sessionService: SessionService) {}
+  constructor(private route: ActivatedRoute, private sessionService: SessionService, private router: Router) {}
 
   ngOnInit(): void {
     this.favorites = this.sessionService.getSession('favorites');
@@ -28,13 +27,13 @@ export class HomePageComponent implements OnInit {
     return movies.map(movie => {
       return {
         id: movie.id,
-        name: movie.name,
-        genre: GenreMap[movie.genre_ids[0]],
+        name: movie.title,
+        genre: 'Fantasy',
         language: movie.originalLanguage,
         poster: movie.poster_path,
         average: movie.vote_average,
         overview: movie.overview,
-        date: movie.first_air_date,
+        date: movie.release_date,
         favorite: this.favorites.some(favorite => favorite === movie.id),
       } as CardModel;
     });
@@ -50,5 +49,9 @@ export class HomePageComponent implements OnInit {
       card.favorite = true;
       this.sessionService.setSession('favorites', this.favorites);
     }
+  }
+
+  public showDetails(id: number): void {
+    this.router.navigate([`movie/${id}`]);
   }
 }

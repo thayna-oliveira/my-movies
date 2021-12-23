@@ -1,0 +1,37 @@
+<div class="app-overview">
+
+  <app-average [average]="average"></app-average>
+
+  <app-heading [title]="title"></app-heading>
+
+  <app-heading title="Overview"
+    level="3"></app-heading>
+
+  <p>{{overview}}</p>
+
+  <app-heading title="IMDB id"
+    level="3"></app-heading>
+
+  <app-badge [label]="imdbId"></app-badge>
+
+  <app-heading title="Release date"
+    level="3"></app-heading>
+
+  <p>{{releaseDate}}</p>
+
+  <app-heading title="Genres"
+    level="3"></app-heading>
+
+  <ul class="genres">
+    <li *ngFor="let genre of genres">
+      <app-badge [label]="genre.name"></app-badge>
+    </li>
+  </ul>
+
+  <app-heading title="More details"
+    level="3"></app-heading>
+
+  <app-link label="See more on IMDB"
+    [redirectTo]="imdbUrl"
+    icon="chevron-right"></app-link>
+</div>
