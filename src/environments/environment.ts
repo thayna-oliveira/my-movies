@@ -4,6 +4,7 @@ export const environment = {
   production: false,
 
   api: {
-    trending: `${urlMovieDB}/trending/tv/day`,
+    trending: `${urlMovieDB}/movie/popular`,
+    details: `${urlMovieDB}/movie`,
   },
 };

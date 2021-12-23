@@ -14,6 +14,7 @@ export class CardComponent implements OnInit {
   @Input() genre: string;
   @Input() favorite: boolean;
   @Output() favoriteEvent = new EventEmitter();
+  @Output() detailsEvent = new EventEmitter();
 
   constructor() {}
 
@@ -21,5 +22,9 @@ export class CardComponent implements OnInit {
 
   public favoriteHandler(): void {
     this.favoriteEvent.emit();
+  }
+
+  public showDetails(): void {
+    this.detailsEvent.emit();
   }
 }

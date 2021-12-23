@@ -1,0 +1,10 @@
+$mobile-landscap: 576px;
+$tablet: 768px;
+$tablet-landscape: 992px;
+$desktop: 1200px;
+
+@mixin media-query($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}

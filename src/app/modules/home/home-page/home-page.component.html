@@ -9,7 +9,8 @@
         [popularity]="card.average"
         [genre]="card.genre"
         [favorite]="card.favorite"
-        (favoriteEvent)="changeFavorite(card)"></app-card>
+        (favoriteEvent)="changeFavorite(card)"
+        (detailsEvent)="showDetails(card.id)"></app-card>
     </div>
   </div>
 </div>

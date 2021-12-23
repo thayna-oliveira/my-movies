@@ -1,0 +1,13 @@
+@import 'spacing';
+
+.app-overview {
+  padding: $spacing-big;
+
+  > .genres {
+    display: flex;
+
+    > li:not(:first-child) {
+      margin-left: 4px;
+    }
+  }
+}

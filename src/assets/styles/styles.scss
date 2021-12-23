@@ -1,5 +1,6 @@
 @import 'colors';
 @import 'typography';
+@import 'spacing';
 @import 'grid';
 @import 'reset';
 
@@ -13,4 +14,8 @@
 .app-main {
   background-color: $color-neutral;
   color: $color-light-100;
+}
+
+.app {
+  padding: $spacing-extra;
 }

@@ -1,0 +1,9 @@
+<div class="movie-cover"
+  [ngStyle]="{'background-image': path}"
+  [ngClass]="{ 'movie-cover--full': full}">
+
+  <app-average class="average"
+    *ngIf="average"
+    [average]="average"></app-average>
+
+</div>

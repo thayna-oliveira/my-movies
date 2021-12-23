@@ -1,7 +1,8 @@
 <app-navbar></app-navbar>
 
-<router-outlet *ngIf="!showLoading"></router-outlet>
-
-<app-loader *ngIf="showLoading"></app-loader>
+<div class="container app">
+  <router-outlet *ngIf="!showLoading"></router-outlet>
+  <app-loader *ngIf="showLoading"></app-loader>
+</div>
 
 <app-footer></app-footer>

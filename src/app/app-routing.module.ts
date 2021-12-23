@@ -7,6 +7,10 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./modules/home/home.module').then(module => module.HomeModule),
   },
+  {
+    path: 'movie/:id',
+    loadChildren: () => import('./modules/movie-details/movie-details.module').then(m => m.MovieDetailsModule),
+  },
 ];
 
 @NgModule({

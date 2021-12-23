@@ -1,6 +1,9 @@
+import { GenreModel } from './genre.model';
+
 export interface MovieModel {
+  title: string;
   origin_country: string;
-  genre_ids: number[];
+  genres: GenreModel[];
   id: number;
   originalLanguage: string;
   poster_path: string;
@@ -8,9 +11,9 @@ export interface MovieModel {
   overview: string;
   vote_count: number;
   backdrop_path: string;
-  name: string;
-  first_air_date: string;
+  release_date: string;
   original_name: string;
   popularity: number;
   media_type: string;
+  imdb_id: string;
 }
