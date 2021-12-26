@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { GenreModel } from '@core/models/genre.model';
 import { MovieModel } from '@core/models/movie.model';
 import { DiscoverService } from '@core/services/discover/discover.service';
@@ -12,19 +12,23 @@ import { DiscoverService } from '@core/services/discover/discover.service';
 export class DiscoverPageComponent implements OnInit {
   public genres: GenreModel;
   public movies: MovieModel[];
+  public currentPage: number;
+  public totalPages: number;
 
-  constructor(private route: ActivatedRoute, private discoverService: DiscoverService, private router: Router) {}
+  constructor(private route: ActivatedRoute, private discoverService: DiscoverService) {}
 
   ngOnInit(): void {
     this.genres = this.route.snapshot.data.genreList.genres;
     this.movies = this.route.snapshot.data.discover.results;
+    this.currentPage = this.route.snapshot.data.discover.page;
+    this.totalPages = this.route.snapshot.data.discover.total_pages;
   }
 
   public searchByGenre(id: string): void {
-    this.discoverService.execute(id).subscribe(movieList => (this.movies = movieList.results));
-  }
-
-  public showDetails(id: number): void {
-    this.router.navigate([`movie/${id}`]);
+    this.discoverService.execute(id).subscribe(movieList => {
+      this.movies = movieList.results;
+      this.currentPage = movieList.page;
+      this.totalPages = movieList.total_pages;
+    });
   }
 }

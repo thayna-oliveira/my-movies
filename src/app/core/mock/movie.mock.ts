@@ -1,10 +1,12 @@
+import { MovieModel } from '@core/models/movie.model';
+
 export class MovieMock {
-  public static mock: MovieMock = {
+  public static mock: MovieModel = {
     title: 'Title',
     origin_country: 'brasil',
-    genres: [{ id: '12', genre: 'Fantasy' }],
+    genre_ids: ['12', '13'],
     id: 13232,
-    originalLanguage: 'en',
+    original_language: 'en',
     poster_path: 'path',
     vote_average: 8,
     overview: 'overview',
@@ -12,7 +14,7 @@ export class MovieMock {
     backdrop_path: 'url',
     release_date: '2019-08-09',
     original_name: 'Title',
-    popularity: '204',
+    popularity: 204,
     media_type: 'tv',
     imdb_id: '201432',
   };

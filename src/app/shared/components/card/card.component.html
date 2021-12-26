@@ -1,20 +1,20 @@
 <div class="app-card">
 
   <app-movie-cover (click)="showDetails()"
-    [average]="popularity"
-    [imageUrl]="image"></app-movie-cover>
+    [average]="movie.vote_average"
+    [imageUrl]="movie.poster_path"></app-movie-cover>
 
   <div class="description">
 
     <app-heading (click)="showDetails()"
-      [title]="title"></app-heading>
+      [title]="movie.title"></app-heading>
 
     <app-fav-button class="favorite"
-      (favoriteEvent)="favoriteHandler()"
+      (favoriteEvent)="changeFavorite()"
       [favorite]="favorite"></app-fav-button>
 
   </div>
 
-  <p class="overview">{{overview}}</p>
+  <p class="overview">{{movie.overview}}</p>
 
 </div>

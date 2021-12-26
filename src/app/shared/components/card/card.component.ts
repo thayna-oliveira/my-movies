@@ -1,4 +1,7 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { MovieModel } from '@core/models/movie.model';
+import { FavoritesService } from '@core/services/favorites/favorites.service';
 
 @Component({
   selector: 'app-card',
@@ -6,26 +9,29 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent implements OnInit {
-  @Input() title: string;
-  @Input() overview: string;
-  @Input() image: string;
-  @Input() releaseDate: string;
-  @Input() popularity: string;
-  @Input() genre: string;
-  @Input() favorite: boolean;
+  @Input() movie: MovieModel;
 
-  @Output() favoriteEvent = new EventEmitter();
-  @Output() detailsEvent = new EventEmitter();
+  public favorite = false;
 
-  constructor() {}
+  constructor(private router: Router, private favoritesService: FavoritesService) {}
 
-  ngOnInit(): void {}
-
-  public favoriteHandler(): void {
-    this.favoriteEvent.emit();
+  ngOnInit(): void {
+    this.favorite = this.favoritesService.isFavorite(this.movie);
   }
 
   public showDetails(): void {
-    this.detailsEvent.emit();
+    this.router.navigate([`movie/${this.movie.id}`]);
+  }
+
+  public changeFavorite(): void {
+    if (this.favorite) {
+      this.favoritesService.removeFavorite(this.movie);
+      this.favorite = false;
+    } else {
+      this.favoritesService.setFavorite(this.movie);
+      this.favorite = true;
+    }
+
+    console.log(this.favoritesService.getFavorites());
   }
 }
