@@ -13,6 +13,7 @@ export class CardComponent implements OnInit {
   @Input() popularity: string;
   @Input() genre: string;
   @Input() favorite: boolean;
+
   @Output() favoriteEvent = new EventEmitter();
   @Output() detailsEvent = new EventEmitter();
 

@@ -3,7 +3,7 @@ export interface MovieModel {
   origin_country: string;
   genre_ids: string[];
   id: number;
-  originalLanguage: string;
+  original_language: string;
   poster_path: string;
   vote_average: number;
   overview: string;

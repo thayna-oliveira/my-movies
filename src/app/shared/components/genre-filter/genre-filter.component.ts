@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { GenreModel } from '@core/models/genre.model';
 
 @Component({
@@ -10,12 +10,28 @@ export class GenreFilterComponent implements OnInit {
   @Input() genres: GenreModel[];
   @Output() selectGenreEvent = new EventEmitter();
 
+  @ViewChild('menu', { static: false })
+  containerMenu: ElementRef;
+
+  public selected: number;
+  public showFadeLeft = false;
+  public showFadeRight = false;
+
   constructor() {}
 
   ngOnInit(): void {}
 
   public selectGenre(id: number): void {
-    console.log(id);
     this.selectGenreEvent.emit(id);
+    this.selected = id;
+  }
+
+  public showFade(): void {
+    const element = this.containerMenu.nativeElement;
+    const scrollSize = element.scrollLeft;
+    const position = element.scrollWidth - element.offsetWidth;
+
+    this.showFadeLeft = scrollSize > 0;
+    this.showFadeRight = scrollSize < position;
   }
 }

@@ -10,7 +10,6 @@
         [image]="card.poster"
         [releaseDate]="card.date | date:'y'"
         [popularity]="card.average"
-        [genre]="card.genre"
         [favorite]="card.favorite"
         (favoriteEvent)="changeFavorite(card)"
         (detailsEvent)="showDetails(card.id)"></app-card>
