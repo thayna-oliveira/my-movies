@@ -1,7 +1,9 @@
-export interface MovieModel {
+import { GenreModel } from './genre.model';
+
+export interface MovieDetailsModel {
   title: string;
   origin_country: string;
-  genre_ids: string[];
+  genres: GenreModel[];
   id: number;
   originalLanguage: string;
   poster_path: string;

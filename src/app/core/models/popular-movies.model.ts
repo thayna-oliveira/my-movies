@@ -1,6 +1,6 @@
 import { MovieModel } from './movie.model';
 
-export interface TrendingModel {
+export interface PopularMoviesModel {
   page: number;
   results: MovieModel[];
   total_pages: number;

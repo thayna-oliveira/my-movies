@@ -3,32 +3,34 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppModule } from '@app/app.module';
+import { GenresMock } from '@core/mock/genres.mock';
 import { TrendingMock } from '@core/mock/trending.mock';
 import { SharedModule } from '@shared/shared.module';
-import { HomePageComponent } from './home-page.component';
+import { DiscoverPageComponent } from './discover-page.component';
 
-describe('HomePageComponent', () => {
-  let component: HomePageComponent;
-  let fixture: ComponentFixture<HomePageComponent>;
+describe('DiscoverPageComponent', () => {
+  let component: DiscoverPageComponent;
+  let fixture: ComponentFixture<DiscoverPageComponent>;
   let activatedRoute: ActivatedRoute;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [HomePageComponent],
+      declarations: [DiscoverPageComponent],
       imports: [AppModule, HttpClientTestingModule, RouterTestingModule, SharedModule],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomePageComponent);
+    fixture = TestBed.createComponent(DiscoverPageComponent);
     activatedRoute = TestBed.inject(ActivatedRoute);
+    activatedRoute.snapshot.data.discover = TrendingMock.mock;
+    activatedRoute.snapshot.data.genreList = GenresMock.mock;
 
-    activatedRoute.snapshot.data.popularMovies = TrendingMock.mock;
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should be created', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

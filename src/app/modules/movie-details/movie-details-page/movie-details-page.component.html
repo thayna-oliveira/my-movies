@@ -1,15 +1,15 @@
 <div class="app-movie-details row">
 
   <app-movie-cover class="col-sm-12 col-md-6 col-lg-5"
-    [imageUrl]="movie.poster_path"
+    [imageUrl]="movieDetails.poster_path"
     full="true"></app-movie-cover>
 
   <app-overview class="col-sm-12 col-md-6 col-lg-7"
-    [title]="movie.title"
-    [overview]="movie.overview"
-    [releaseDate]="movie.release_date"
-    [average]="movie.vote_average"
-    [genres]="movie.genres"
-    [imdbId]="movie.imdb_id"></app-overview>
+    [title]="movieDetails.title"
+    [overview]="movieDetails.overview"
+    [releaseDate]="movieDetails.release_date"
+    [average]="movieDetails.vote_average"
+    [genres]="movieDetails.genres"
+    [imdbId]="movieDetails.imdb_id"></app-overview>
 
 </div>
