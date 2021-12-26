@@ -8,6 +8,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { CardComponent } from './components/card/card.component';
 import { FavButtonComponent } from './components/fav-button/fav-button.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { GenreFilterComponent } from './components/genre-filter/genre-filter.component';
 import { HeadingComponent } from './components/heading/heading.component';
 import { IconComponent } from './components/icon/icon.component';
 import { LinkComponent } from './components/link/link.component';
@@ -30,6 +31,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     BadgeComponent,
     AverageComponent,
     LinkComponent,
+    GenreFilterComponent,
   ],
   exports: [
     ButtonComponent,
@@ -45,6 +47,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     BadgeComponent,
     AverageComponent,
     LinkComponent,
+    GenreFilterComponent,
   ],
 })
 export class SharedModule {}

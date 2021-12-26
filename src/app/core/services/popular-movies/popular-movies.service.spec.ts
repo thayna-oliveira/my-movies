@@ -1,15 +1,15 @@
 import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
-import { TrendingService } from './trending.service';
+import { PopularMoviesService } from './popular-movies.service';
 
-describe('TrendingService', () => {
-  let service: TrendingService;
+describe('PopularMovies', () => {
+  let service: PopularMoviesService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule],
     });
-    service = TestBed.inject(TrendingService);
+    service = TestBed.inject(PopularMoviesService);
   });
 
   it('should be created', () => {

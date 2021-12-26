@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MovieModel } from '@core/models/movie.model';
+import { MovieDetailsModel } from '@core/models/movie-details.model';
 
 @Component({
   selector: 'app-movie-details-page',
@@ -8,11 +8,11 @@ import { MovieModel } from '@core/models/movie.model';
   styleUrls: ['./movie-details-page.component.scss'],
 })
 export class MovieDetailsPageComponent implements OnInit {
-  public movie: MovieModel;
+  public movieDetails: MovieDetailsModel;
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.movie = this.route.snapshot.data.movieDetails;
+    this.movieDetails = this.route.snapshot.data.movieDetails;
   }
 }

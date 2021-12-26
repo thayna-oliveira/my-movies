@@ -19,8 +19,9 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {
     this.favorites = this.sessionService.getSession('favorites');
 
-    this.total = this.route.snapshot.data.trendings.results.lenght;
-    this.cards = this.toCardModel(this.route.snapshot.data.trendings.results);
+    this.total = this.route.snapshot.data.popularMovies.results.lenght;
+
+    this.cards = this.toCardModel(this.route.snapshot.data.popularMovies.results);
   }
 
   private toCardModel(movies: MovieModel[]): CardModel[] {
@@ -28,7 +29,7 @@ export class HomePageComponent implements OnInit {
       return {
         id: movie.id,
         name: movie.title,
-        genre: 'Fantasy',
+        genre: movie.genre_ids,
         language: movie.originalLanguage,
         poster: movie.poster_path,
         average: movie.vote_average,

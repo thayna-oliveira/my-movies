@@ -9,6 +9,14 @@
   line-height: $line-height-default;
   font-family: $font-family;
   font-weight: $font-weight-default;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+
+  &::-webkit-scrollbar {
+    /* WebKit */
+    width: 0;
+    height: 0;
+  }
 }
 
 .app-main {
@@ -17,5 +25,5 @@
 }
 
 .app {
-  padding: $spacing-extra;
+  padding: $spacing-extra 0;
 }

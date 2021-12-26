@@ -1,7 +1,7 @@
 export interface CardModel {
   id: number;
   name: string;
-  genre: string;
+  genre: string[];
   language: string;
   poster: string;
   average: number;
