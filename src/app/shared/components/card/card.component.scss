@@ -4,43 +4,9 @@
 
 .app-card {
   margin: $spacing-big 0;
+  cursor: pointer;
 
-  &__cover {
-    height: 356px;
-    width: 100%;
-    border-radius: 8px;
-    transition: all 0.2s;
-    box-shadow: 0px 4px 12px 0px rgb(0 0 0 / 40%);
-    background-position: center;
-    background-size: cover;
-    position: relative;
-
-    &:hover {
-      opacity: 0.8;
-    }
-  }
-
-  &__popularity {
-    color: $color-light;
-    font-size: $font-size-small;
-    line-height: $line-height-small;
-    background: $color-primary;
-    padding: 4px 8px;
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-  }
-
-  &__average {
-    margin-left: 8px;
-    font-size: 14px;
-  }
-
-  &__overview {
-    margin: $spacing-small 0;
+  > .overview {
     display: -webkit-box;
     font-size: $font-size-small;
     height: calc(3 * #{$line-height-default});
@@ -51,18 +17,17 @@
     text-overflow: ellipsis;
   }
 
-  &__buttons {
+  > .buttons {
     display: flex;
   }
 
-  &__description {
+  > .description {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-  }
+    align-items: flex-start;
 
-  &__title {
-    flex: 1;
-    margin-right: 8px;
+    > .favorite {
+      margin: $spacing-default 0 0 $spacing-x-small;
+    }
   }
 }

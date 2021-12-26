@@ -4,20 +4,17 @@
     [average]="popularity"
     [imageUrl]="image"></app-movie-cover>
 
-  <div class="app-card__description">
+  <div class="description">
 
     <app-heading (click)="showDetails()"
-      class="app-card__title"
       [title]="title"></app-heading>
 
-    <div class="app-card__buttons">
-      <app-fav-button (favoriteEvent)="favoriteHandler()"
-        [favorite]="favorite"></app-fav-button>
-    </div>
+    <app-fav-button class="favorite"
+      (favoriteEvent)="favoriteHandler()"
+      [favorite]="favorite"></app-fav-button>
+
   </div>
 
-  <div>{{releaseDate}} • {{genre}}</div>
-
-  <p class="app-card__overview">{{overview}}</p>
+  <p class="overview">{{overview}}</p>
 
 </div>

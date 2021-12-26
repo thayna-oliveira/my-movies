@@ -13,7 +13,6 @@
         [image]="movie.poster_path"
         [releaseDate]="movie.release_date | date:'y'"
         [popularity]="movie.vote_average"
-        [genre]="movie.genre"
         [favorite]="movie.favorite"
         (favoriteEvent)="changeFavorite(card)"
         (detailsEvent)="showDetails(movie.id)"></app-card>

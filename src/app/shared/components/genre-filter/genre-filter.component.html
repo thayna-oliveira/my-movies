@@ -1,8 +1,19 @@
 <div class="app-genre-filter">
 
-  <ul class="menu">
+  <span class='fade-left'
+    *ngIf="showFadeLeft"></span>
+
+  <span class='fade-right'
+    *ngIf="showFadeRight"></span>
+
+  <ul #menu
+    class="menu"
+    (scroll)="showFade()">
+    <li [ngClass]="{'selected': !selected}"
+      class="item">All</li>
     <li *ngFor="let genre of genres"
       (click)="selectGenre(genre.id)"
+      [ngClass]="{'selected': genre.id == selected}"
       class="item">{{genre.name}}</li>
   </ul>
 
