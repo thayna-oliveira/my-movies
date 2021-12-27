@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { By } from '@angular/platform-browser';
 import { BrandComponent } from './brand.component';
 
 describe('BrandComponent', () => {
@@ -8,9 +8,8 @@ describe('BrandComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BrandComponent ]
-    })
-    .compileComponents();
+      declarations: [BrandComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,5 +20,10 @@ describe('BrandComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should display myMovies logo', () => {
+    const logo = fixture.debugElement.query(By.css('.app-brand__logo'));
+    expect(logo.nativeElement.src).toContain('/assets/images/brand.svg');
   });
 });

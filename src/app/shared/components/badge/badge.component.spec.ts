@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { By } from '@angular/platform-browser';
 import { BadgeComponent } from './badge.component';
 
 describe('BadgeComponent', () => {
@@ -8,9 +8,8 @@ describe('BadgeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BadgeComponent ]
-    })
-    .compileComponents();
+      declarations: [BadgeComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,5 +20,13 @@ describe('BadgeComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('given a label then should display it', () => {
+    component.label = 'Example';
+    fixture.detectChanges();
+
+    const badgeLabel = fixture.debugElement.query(By.css('.app-bagde'));
+    expect(badgeLabel.nativeElement.innerHTML).toBe('Example');
   });
 });

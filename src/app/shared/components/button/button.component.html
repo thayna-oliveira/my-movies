@@ -5,5 +5,6 @@
   (click)="clickButton()">
   <app-icon [iconType]="icon"
     *ngIf="icon"></app-icon>
-  <span *ngIf="label">{{label}}</span>
+  <span class="label"
+    *ngIf="label">{{label}}</span>
 </button>

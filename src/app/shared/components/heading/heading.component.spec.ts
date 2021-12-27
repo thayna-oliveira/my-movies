@@ -28,7 +28,7 @@ describe('HeadingComponent', () => {
     ${'2'}       | ${'h2'}
     ${'3'}       | ${'h3'}
     ${undefined} | ${'h2'}
-  `('given a $level level should display a $tag tag', ({ level, tag }) => {
+  `('given a $level level should display a $tag element', ({ level, tag }) => {
     component.level = level;
     component.title = 'Example';
     fixture.detectChanges();
