@@ -1,0 +1,19 @@
+@import 'spacing';
+
+.app-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+
+  > .image {
+    padding: $spacing-big 0;
+    width: 100px;
+  }
+
+  > .description {
+    width: 50%;
+    margin-bottom: $spacing-extra;
+  }
+}
