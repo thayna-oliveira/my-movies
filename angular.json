@@ -24,7 +24,7 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
 
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": ["src/favicon.ico", "src/assets", "src/_redirects"],
             "styles": ["src/assets/styles/styles.scss"],
             "stylePreprocessorOptions": {
               "includePaths": ["src/assets/styles/"]
