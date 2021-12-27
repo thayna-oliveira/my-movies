@@ -1,12 +1,15 @@
-<div class="container">
+<div class="app-favorites-page container">
+
   <div class="row">
     <app-heading title="My favorites"></app-heading>
 
+    <app-not-found *ngIf="favorites.length == 0"
+      description="There are no movies or TV shows in your favorites section. You can add
+    one by clicking on the favorite button."></app-not-found>
+
     <div class="col-sm-6 col-md-4 col-lg-3"
       *ngFor="let favorite of favorites">
-
       <app-card [movie]="favorite"></app-card>
-
     </div>
   </div>
 </div>
