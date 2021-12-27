@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./not-found.component.scss'],
 })
 export class NotFoundComponent implements OnInit {
-  @Input() description: string;
+  @Input() description = "You’re either misspelling the URL or requesting a page that's no longer here.";
 
   constructor() {}
 
