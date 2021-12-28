@@ -1,31 +1,111 @@
 @import 'colors';
+@import 'media-query';
+@import 'spacing';
+
+$navbarHeight: 80px;
 
 .app-navbar {
-  padding: 20px;
-  border-bottom: 1px solid darken($color-light-100, 50%);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: $navbarHeight;
 
-  &__navigation {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+  &::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: darken($color-light-100, 50%);
+    position: absolute;
+    left: 0;
+    top: $navbarHeight;
   }
 
-  &__menu {
-    display: flex;
+  > .menu {
+    background: lighten($color-neutral, 10%);
+    position: absolute;
+    top: $navbarHeight;
+    width: 90%;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    display: none;
+    margin-right: auto;
+    margin-left: auto;
 
-    & > li:not(:first-child) {
-      margin-left: 32px;
+    &.-active {
+      display: block;
+    }
+
+    @include media-query($tablet) {
+      position: relative;
+      display: flex;
+      top: 0;
+      align-content: flex-end;
+      justify-content: flex-end;
+      background: transparent;
     }
   }
 
-  &__link {
+  > .menu > .item {
+    padding: $spacing-small $spacing-default;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid darken($color-light-100, 30%);
+    }
+
+    @include media-query($tablet) {
+      border-bottom: none;
+    }
+  }
+
+  > .menu > .item > .link {
     color: $color-light;
   }
 
-  &__buttons {
-    margin-left: 20px;
+  > .toggle {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    position: relative;
+
+    @include media-query($tablet) {
+      display: none;
+    }
+  }
+
+  > .toggle > .bar {
+    position: absolute;
+    right: 12px;
+    display: block;
+    width: 26px;
+    height: 2px;
+    background-color: $color-light;
+
+    &:nth-child(1) {
+      top: 17px;
+    }
+
+    &:nth-child(2) {
+      top: 24px;
+    }
+
+    &:nth-child(3) {
+      top: 31px;
+    }
+  }
+
+  > .overlay {
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: $navbarHeight;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.6;
+    overflow-x: hidden;
+    transition: 0.5s;
+    left: 0;
+    right: 0;
   }
 }
