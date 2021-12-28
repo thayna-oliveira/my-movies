@@ -51,10 +51,10 @@ $navbarHeight: 80px;
 
     &:not(:last-child) {
       border-bottom: 1px solid darken($color-light-100, 30%);
-    }
 
-    @include media-query($tablet) {
-      border-bottom: none;
+      @include media-query($tablet) {
+        border: none;
+      }
     }
   }
 
