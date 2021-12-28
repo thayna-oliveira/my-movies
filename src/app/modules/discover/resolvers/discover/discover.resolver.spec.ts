@@ -7,7 +7,7 @@ import { DiscoverModule } from '../../discover.module';
 import { DiscoverResolver } from './discover.resolver';
 
 describe('DiscoverResolver', () => {
-  let trendingsResolver: DiscoverResolver;
+  let discoverResolver: DiscoverResolver;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -15,10 +15,10 @@ describe('DiscoverResolver', () => {
       providers: [DiscoverResolver],
     });
 
-    trendingsResolver = TestBed.inject(DiscoverResolver);
+    discoverResolver = TestBed.inject(DiscoverResolver);
   });
 
   it('should be created', () => {
-    expect(trendingsResolver).toBeTruthy();
+    expect(discoverResolver).toBeTruthy();
   });
 });

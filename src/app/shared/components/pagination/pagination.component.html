@@ -1,0 +1,36 @@
+<ul class="app-pagination">
+  <li class="page">
+    <button class="button"
+      (click)="selectPage(1)"
+      [disabled]="currentPage === 1">
+      <app-icon iconType="double-left"></app-icon>
+    </button>
+  </li>
+  <li class="page">
+    <button class="button"
+      (click)="prevPage()"
+      [disabled]="currentPage === 1">
+      <app-icon iconType="angle-left"></app-icon>
+    </button>
+  </li>
+  <li *ngFor="let page of pages"
+    class="page">
+    <button class="button"
+      (click)="selectPage(page)"
+      [ngClass]="{'-selected': page === currentPage}">{{page}}</button>
+  </li>
+  <li class="page">
+    <button class="button"
+      (click)="nextPage()"
+      [disabled]="currentPage === totalPages">
+      <app-icon iconType="angle-right"></app-icon>
+    </button>
+  </li>
+  <li class="page">
+    <button class="button"
+      (click)="selectPage(totalPages)"
+      [disabled]="currentPage === totalPages">
+      <app-icon iconType="double-right"></app-icon>
+    </button>
+  </li>
+</ul>

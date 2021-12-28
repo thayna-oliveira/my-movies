@@ -1,29 +1,24 @@
 <nav class="app-navbar">
 
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6 col-md-3 col-lg-3">
-        <a class="app-navbar__link" href="/">
-          <app-brand class="app-navbar__brand"></app-brand>
-        </a>
-      </div>
+  <a class="link" href="/">
+    <app-brand class="brand"></app-brand>
+  </a>
 
-      <div class="col-sm-6 col-md-9 col-lg-9">
-        <div class="app-navbar__navigation">
+  <ul class="menu"
+    [ngClass]="{'-active': isActive}">
+    <li class="item"><a class="link" href="/">Home</a></li>
+    <li class="item"><a class="link" href="/discover">Discover</a></li>
+    <li class="item"><a class="link" href="/favorites">Favorites</a></li>
+  </ul>
 
-          <ul class="app-navbar__menu">
-            <li><a class="app-navbar__link" href="/">Home</a></li>
-            <li><a class="app-navbar__link" href="/discover">Discover</a></li>
-            <li><a class="app-navbar__link" href="/favorites">Favorites</a></li>
-          </ul>
+  <button class="toggle"
+    #menuToggle>
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
 
-          <app-button class="app-navbar__buttons"
-            label="log in"></app-button>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
+  <div class="overlay"
+    *ngIf="isActive"></div>
 
 </nav>

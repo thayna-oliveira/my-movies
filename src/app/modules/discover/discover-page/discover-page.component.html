@@ -11,9 +11,9 @@
       <app-card [movie]="movie"></app-card>
     </div>
 
-    <div class="pagination">
-      <div>{{currentPage}}</div>
-      <div>{{totalPages}}</div>
-    </div>
+    <app-pagination [totalPages]="totalPages"
+      [currentPage]="currentPage"
+      (selectPageEvent)="search($event)"></app-pagination>
+
   </div>
 </div>

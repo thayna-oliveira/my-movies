@@ -12,23 +12,37 @@ import { DiscoverService } from '@core/services/discover/discover.service';
 export class DiscoverPageComponent implements OnInit {
   public genres: GenreModel;
   public movies: MovieModel[];
-  public currentPage: number;
-  public totalPages: number;
+  public currentPage = 1;
+  public totalPages = 0;
+  public currentGenre = 'all';
 
   constructor(private route: ActivatedRoute, private discoverService: DiscoverService) {}
 
   ngOnInit(): void {
     this.genres = this.route.snapshot.data.genreList.genres;
     this.movies = this.route.snapshot.data.discover.results;
-    this.currentPage = this.route.snapshot.data.discover.page;
-    this.totalPages = this.route.snapshot.data.discover.total_pages;
+    this.updateTotalPages(this.route.snapshot.data.discover.total_pages);
   }
 
   public searchByGenre(id: string): void {
-    this.discoverService.execute(id).subscribe(movieList => {
+    if (this.currentGenre !== id) {
+      this.currentPage = 1;
+      this.currentGenre = id;
+
+      this.search(1);
+    }
+  }
+
+  public search(pageNumber: number): void {
+    this.discoverService.execute(this.currentGenre, pageNumber.toString()).subscribe(movieList => {
       this.movies = movieList.results;
-      this.currentPage = movieList.page;
-      this.totalPages = movieList.total_pages;
+      this.currentPage = Number(movieList.page);
+      this.updateTotalPages(movieList.total_pages);
     });
+  }
+
+  public updateTotalPages(pageNumber: string): void {
+    const pages = Number(pageNumber);
+    this.totalPages = pages > 500 ? 500 : pages;
   }
 }

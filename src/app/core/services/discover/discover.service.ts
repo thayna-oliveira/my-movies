@@ -10,10 +10,9 @@ import { Observable } from 'rxjs';
 export class DiscoverService {
   constructor(private httpClient: HttpClient) {}
 
-  public execute(genre: string): Observable<MovieListModel> {
+  public execute(genre: string, page: string): Observable<MovieListModel> {
     const apiKey = '0f60ad592a39d4b497a0d8889bba1be2';
-    const params = new HttpParams().append('with_genres', genre).append('api_key', apiKey);
-
+    const params = new HttpParams().append('api_key', apiKey).append('with_genres', genre).append('page', page);
     return this.httpClient.get<MovieListModel>(environment.api.discover, { params });
   }
 }

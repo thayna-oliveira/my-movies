@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
-import { PopularMoviesModel } from '@core/models/popular-movies.model';
+import { MovieListModel } from '@core/models/movie-list.model';
 import { PopularMoviesService } from '@core/services/popular-movies/popular-movies.service';
 import { Observable } from 'rxjs';
 
 @Injectable()
-export class PopularMoviesResolver implements Resolve<Observable<PopularMoviesModel>> {
+export class PopularMoviesResolver implements Resolve<Observable<MovieListModel>> {
   constructor(private popularMoviesService: PopularMoviesService) {}
 
-  resolve(): Observable<PopularMoviesModel> {
+  resolve(): Observable<MovieListModel> {
     return this.popularMoviesService.execute();
   }
 }
