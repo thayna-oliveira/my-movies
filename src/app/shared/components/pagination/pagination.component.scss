@@ -1,0 +1,32 @@
+@import 'spacing';
+@import 'colors';
+@import 'typography';
+@import 'media-query';
+
+.app-pagination {
+  margin: $spacing-big 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+
+  > .page {
+    &:not(:first-child) {
+      margin: $spacing-x-small 0 $spacing-x-small $spacing-x-small;
+    }
+  }
+
+  > .page > .button {
+    cursor: pointer;
+    padding: 0 $spacing-small;
+    border-radius: $spacing-x-small;
+    background-color: lighten($color-neutral, 5%);
+    font-size: $font-size-small;
+    height: 40px;
+
+    &.-selected {
+      background: $color-primary;
+      color: $color-light;
+    }
+  }
+}

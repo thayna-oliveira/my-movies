@@ -31,7 +31,5 @@ export class CardComponent implements OnInit {
       this.favoritesService.setFavorite(this.movie);
       this.favorite = true;
     }
-
-    console.log(this.favoritesService.getFavorites());
   }
 }

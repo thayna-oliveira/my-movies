@@ -15,6 +15,7 @@ import { LinkComponent } from './components/link/link.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   imports: [CommonModule],
@@ -34,6 +35,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     LinkComponent,
     GenreFilterComponent,
     NotFoundComponent,
+    PaginationComponent,
   ],
   exports: [
     ButtonComponent,
@@ -51,6 +53,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     LinkComponent,
     GenreFilterComponent,
     NotFoundComponent,
+    PaginationComponent,
   ],
 })
 export class SharedModule {}

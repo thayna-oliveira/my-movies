@@ -1,8 +1,8 @@
 import { MovieModel } from './movie.model';
 
 export interface MovieListModel {
-  page: number;
+  page: string;
   results: MovieModel[];
-  total_pages: number;
-  total_results: number;
+  total_pages: string;
+  total_results: string;
 }
