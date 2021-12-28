@@ -5,6 +5,7 @@
 
   > .genres {
     display: flex;
+    flex-flow: row wrap;
 
     > li:not(:first-child) {
       margin-left: 4px;
